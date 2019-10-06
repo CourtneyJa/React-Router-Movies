@@ -8,7 +8,11 @@ const App = () => {
   const [savedList, setSavedList] = useState( [] );
 
   const addToSavedList = movie => {
-    setSavedList( [...savedList, movie] );
+    if(savedList.map(movie => movie.id).includes (movie.id)){
+      console.log ('Its happening...')
+      setSavedList( [...savedList, movie] );
+    } else console.log ('Movie not saved');
+
   };
 
   return (
